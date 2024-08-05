@@ -4,29 +4,29 @@ import PerkCard from "./components/PerkCard";
 const perkData = [
   {
     id: 1,
-    name: "Perk 1",
+    category: "Perk 1",
     description: "This is perk 1",
     discount: 10,
     brand: "Brand 1",
-    card: "Card 1",
+    card: "Visa",
     bank: "Bank 1",
   },
   {
     id: 2,
-    name: "Perk 2",
+    category: "Perk 2",
     description: "This is perk 2",
     discount: 20,
     brand: "Brand 2",
-    card: "Card 2",
+    card: "Debit",
     bank: "Bank 2",
   },
   {
     id: 3,
-    name: "Perk 3",
+    category: "Perk 3",
     description: "This is perk 3",
     discount: 15,
     brand: "Brand 3",
-    card: "Card 3",
+    card: "Credit",
     bank: "Bank 3",
   },
 
@@ -85,7 +85,7 @@ function MainPage() {
      {filteredPerks.map((perk) => (
         <PerkCard
           key={perk.id}
-          name={perk.name}
+          category={perk.category}
           description={perk.description}
           discount={perk.discount}
           brand={perk.brand}

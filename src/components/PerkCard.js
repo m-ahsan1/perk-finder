@@ -1,7 +1,7 @@
 import React from "react";
 import ReactCardFlip from "react-card-flip";
 
-function PerkCard() {
+function PerkCard({category, description, discount, brand, card, bank}) {
   const [isFlipped, setIsFlipped] = React.useState(false);
 
   function flipCard() {
@@ -16,22 +16,22 @@ function PerkCard() {
           onClick={flipCard}
         >
           <div>
-            <h1 className="text-2xl font-bold text-center pb-6">50% OFF</h1>
+            <h1 className="text-2xl font-bold text-center pb-6">{discount}% OFF</h1>
             <div className="grid grid-cols-2">
               <div className="">
                 <p className="my-2 w-fit bg-green-500 font-semibold rounded-full p-2 text-center">
-                  Domino's
+                  {brand}
                 </p>
                 <p className="w-fit bg-green-500 font-semibold rounded-full p-2">
-                  Food
+                  {category}
                 </p>
               </div>
               <div className="">
                 <p className="my-2 w-fit bg-green-500 font-semibold rounded-full p-2">
-                  Meezan Bank
+                  {bank}
                 </p>
                 <p className="w-fit bg-green-500 font-semibold rounded-full p-2">
-                  Visa Platinum Debit Card
+                  {card}
                 </p>
               </div>
             </div>
@@ -44,7 +44,7 @@ function PerkCard() {
         >
           <div>
             <h1 className="font-semibold text-lg py-2">Terms & Conditions</h1>
-            <p>1. Offer valid for dine-in, takeaway, and delivery.</p>
+            <p>{description}</p>
           </div>
         </div>
       </ReactCardFlip>
