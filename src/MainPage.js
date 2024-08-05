@@ -1,36 +1,7 @@
 import React from "react";
 import PerkCard from "./components/PerkCard";
+import perkData from "./Data.js";
 
-const perkData = [
-  {
-    id: 1,
-    category: "Perk 1",
-    description: "This is perk 1",
-    discount: 10,
-    brand: "Brand 1",
-    card: "Visa",
-    bank: "Bank 1",
-  },
-  {
-    id: 2,
-    category: "Perk 2",
-    description: "This is perk 2",
-    discount: 20,
-    brand: "Brand 2",
-    card: "Debit",
-    bank: "Bank 2",
-  },
-  {
-    id: 3,
-    category: "Perk 3",
-    description: "This is perk 3",
-    discount: 15,
-    brand: "Brand 3",
-    card: "Credit",
-    bank: "Bank 3",
-  },
-
-];
 
 
 
@@ -74,16 +45,18 @@ function MainPage() {
           <input
             type="text"
             id="simple-search"
-            class="h-[50px] sm:h-[80px] bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="h-[50px] sm:h-[60px] bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search for perks"
             onChange={handleSearch}
             required
           />
         </div>
       </form>
+    <div className="flex flex-wrap">
 
      {filteredPerks.map((perk) => (
-        <PerkCard
+      
+         <PerkCard
           key={perk.id}
           category={perk.category}
           description={perk.description}
@@ -92,8 +65,10 @@ function MainPage() {
           card={perk.card}
           bank={perk.bank}
         />
+    
       )
      )}
+    </div>
     </div>
   );
 }
